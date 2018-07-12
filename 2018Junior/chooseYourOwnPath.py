@@ -30,29 +30,30 @@ The last line will contain a non-negative integer K, which is the shortest path 
 
 ### Approach: Run two BFS, first to check if all nodes can be reached, second to find the shortest path.
 
-v = int(input())
-a = []
-for i in range(v):
-  a.append([int(j) - 1 for j in input().split()][1:] or [])
-qu = [0]
-visited1 = set()
+vertices = int(input())
+adjList = []
+for i in range(vertices):
+  a.append([int(node) - 1 for node in input().split()][1:] or [])
+queue = set([0])
+visited = set()
 
 ### First BFS
-while qu:
-  for i in qu:
-    visited1.add(i)
-  qu = [j for i in qu for j in a[i] if j not in visited1]
-print("Y" if len(visited1) == v else "N")
+while queue:
+  visited |= queue
+  queue = {node for vertice in queue for node in a[vertice] if node not in visited}
+print("NY"[len(visited) == vertices])
 
 ### Second BFS
-q = [[0]]
-while q:
-  p = q.pop(0)
-  v1 = p[-1]
-  if len(a[v1]) < 1:
+queue = [[0]]
+visited = set()
+while queue:
+  path = queue.pop(0)
+  node = path[-1]
+  if len(a[node]) == 0:
     break
-  for i in a[v1]:
-    np = p[:]
-    np += i,
-    q.append(np)
-print(len(p))
+  for vertice in a[node]:
+    if vertice in visited:
+      pass
+    visited.add(vertice)
+    queue.append(path + [vertice])
+print(len(path))
