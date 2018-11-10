@@ -1,4 +1,4 @@
-# CanadianComputingCompetition
-This repository contains some of the best solutions I've written for Waterloo's Candian Computing Competition (CCC)
+## CanadianComputingCompetition
+This repository contains some of solutions to some of the problems found in Waterloo's Candian Computing Competition (CCC)
 
 https://cemc.math.uwaterloo.ca/contests/computing.html
