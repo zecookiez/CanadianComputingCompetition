@@ -5,6 +5,10 @@
 #On DMOJ, this passed the tests in py3 in 1.35 seconds and took 10.3MB of memory which was a pretty decent amount lower than the other top python3 solutions.
 
 #Currently used speedup techniques: deque, bitmask marking
+#Additional speedup tricks not implemented:
+# 1- bi-directional search
+# 2- better input parsing
+# 3- convert graph into bitmasks, then iterate through with bit operations
 
 import sys
 from collections import deque
