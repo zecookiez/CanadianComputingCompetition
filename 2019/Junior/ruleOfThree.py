@@ -3,6 +3,21 @@
 
 # I wrote senior this year so I cannot confirm this will pass, but running my own tests shows that it's capable of doing steps=15 :)
 
+# Further optimizations if this does not pass:
+# - Meet-in-the-middle trick (precompute half of the paths)
+#     Should be able to reduce complexity by about a square root
+#
+# - Better pattern matching for each rule
+#     Right now it is O(n^2) for each rule, we can improve this by either using Rabin Karp or any linear string function.
+#
+# - Convert to binary
+#     Bitwise operations will speed up:
+#     - Memoizing each state [O(1) instead of O(n)]
+#     - Pattern matching [O(n) instead of O(n^2)]
+#     - Creating the new string after substitution [O(1) instead of O(n)]
+
+# So yeah lots can be done to improve this current algorithm :)
+
 from sys import stdin
 input = stdin.readline
 
