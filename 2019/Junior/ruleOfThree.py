@@ -2,6 +2,7 @@
 # To speed this up, we will NOT go through identical states (# of steps, state)
 
 # I wrote senior this year so I cannot confirm this will pass, but running my own tests shows that it's capable of doing steps=15 :)
+# EDIT: confirmed it passed!
 
 # Further optimizations if this does not pass:
 # - Meet-in-the-middle trick (precompute half of the paths)
