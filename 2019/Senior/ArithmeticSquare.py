@@ -1,6 +1,4 @@
 from random import randint
-from sys import stdin
-input = stdin.readline
 
 # Outline of approach because this problem tripped lots of people (including me) during the contest:
 #
@@ -20,15 +18,12 @@ def fill(grid):
     for _ in xrange(9):
         for side in xrange(2):
             for pos, (i, j, k) in enumerate(grid):
-                if j == "X":
-                    if i != "X" != k:
-                        j = i + k >> 1
-                elif k == "X":
-                    if i != "X" != j:
-                        k = j + j - i
-                elif i == "X":
-                    if j != "X" != k:
-                        i = j + j - k
+                if j == "X" and i != "X" != k:
+                    j = i + k >> 1
+                elif k == "X" and i != "X" != j:
+                    k = j + j - i
+                elif i == "X" and j != "X" != k:
+                    i = j + j - k
                 grid[pos] = i, j, k
             grid = map(list, zip(*grid))
             
@@ -59,5 +54,5 @@ def helper(state):
             state[row][col] = X
         
 X = "X" # Used for eval. This is just a nice trick to read the input
-for i, j, k in helper([map(eval, input().split()) for i in xrange(3)]):
+for i, j, k in helper([map(eval, raw_input().split()) for i in xrange(3)]):
     print i, j, k
