@@ -7,5 +7,7 @@ If possible I'll even attempt to point out some next step optimizations that can
 
 The following codes and solutions are tested on https://dmoj.ca/ and/or on the CCC Grader depending on which site's tests are stronger.
 
+If requested I can write up and editorial for further explanations to one of the problem :)
+
 ### Problem Source
 https://cemc.math.uwaterloo.ca/contests/computing.html
